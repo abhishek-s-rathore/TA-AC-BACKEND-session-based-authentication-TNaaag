@@ -7,25 +7,22 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/register', function (req, res, next) {
-  var error = req.flash('error');
-  res.render('register', { error });
+  res.render('register', { error: req.flash('error')[0] });
 });
 
 router.post('/register', function (req, res, next) {
   User.create(req.body, (err, user) => {
     if (err) {
-      // console.log(err);
-      if (err.name === 'MonooError') {
-        req.flash('error', 'Email already taken...');
+      if (err.name === 'MongoError') {
+        req.flash('error', 'This Email is already registered!');
         return res.redirect('/users/register');
       }
-      if (err.name === 'validatorError') {
-        req.flash('error', err._message);
-        return res.json(err);
+      if (err.name === 'ValidationError') {
+        req.flash('error', err.message);
+        return res.redirect('/users/register');
       }
-    } else {
-      res.redirect('/users/login');
     }
+    res.redirect('/users/login');
   });
 });
 
