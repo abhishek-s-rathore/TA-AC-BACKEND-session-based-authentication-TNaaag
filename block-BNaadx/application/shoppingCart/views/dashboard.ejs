@@ -25,24 +25,38 @@
     <!--Header-->
     <header class="header">
       <div class="container flex justify-between align-center">
-        <a href="/" class="logo"><span>E</span>cart</a>
+        <a href="" class="logo"><span>E</span>cart</a>
         <div class="flex justify-between align-center">
-          <a class="btn btn-primary" href="/users/signup">Sign Up</a>
-          <a class="btn btn-primary" href="/users/signin">Sign In</a>
+          <a class="btn btn-primary" href="">Log Out</a>
+          <div class="user-info flex justify-between align-center flex-column">
+            <h2><%= user.name %></h2>
+            <% if(user.isAdmin === 'true'){ %>
+            <p>Admin</p>
+            <% } else if(user.isAdmin === 'false'){ %>
+            <p>User</p>
+            <% } %>
+          </div>
         </div>
       </div>
     </header>
     <!--Main-->
-    <main class="home container">
-      <h1>Welcome to Ecart!</h1>
-      <div class="flex justify-between align-center hero">
-        <div>
-          <p>SignUp to continue shopping.....</p>
-          <p>Best Of luck..!</p>
-        </div>
-
-        <div><a class="btn btn-primary" href="/users/signup">Sign Up</a></div>
-      </div>
+    <main style="text-align: center">
+      <p
+        style="
+          text-align: center;
+          color: green;
+          font-size: 2rem;
+          font-style: italic;
+          margin: 2rem auto;
+        "
+      >
+        Welcome to Ecart!
+      </p>
+      <a href="/products"
+        ><button style="font-size: 1.2rem" class="btn btn-primary">
+          Go To Products
+        </button></a
+      >
     </main>
   </body>
 </html>

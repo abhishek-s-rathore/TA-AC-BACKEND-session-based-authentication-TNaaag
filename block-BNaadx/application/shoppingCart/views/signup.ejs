@@ -26,23 +26,32 @@
     <header class="header">
       <div class="container flex justify-between align-center">
         <a href="/" class="logo"><span>E</span>cart</a>
-        <div class="flex justify-between align-center">
-          <a class="btn btn-primary" href="/users/signup">Sign Up</a>
+        <div class="flex justify-center align-center">
           <a class="btn btn-primary" href="/users/signin">Sign In</a>
         </div>
       </div>
     </header>
     <!--Main-->
-    <main class="home container">
-      <h1>Welcome to Ecart!</h1>
-      <div class="flex justify-between align-center hero">
-        <div>
-          <p>SignUp to continue shopping.....</p>
-          <p>Best Of luck..!</p>
-        </div>
+    <main class="signin container">
+      <h2>SignUp</h2>
+      <form action="/users/signup" method="POST">
+        <% if(error){ %>
+        <p><%= error %></p>
+        <% } %>
 
-        <div><a class="btn btn-primary" href="/users/signup">Sign Up</a></div>
-      </div>
+        <input type="text" name="name" placeholder="Enter Your Name..." />
+        <input type="text" name="email" placeholder="Enter Your Email.." />
+        <select id="isAdmin" name="isAdmin">
+          <option for="isAdmin" value="user">User</option>
+          <option for="isAdmin" value="admin">Admin</option>
+        </select>
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter Your Password.."
+        />
+        <input type="submit" value="SignUp" />
+      </form>
     </main>
   </body>
 </html>

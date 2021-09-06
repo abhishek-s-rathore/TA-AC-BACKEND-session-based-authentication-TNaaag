@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Title-->
-    <title>Home | E-Cart</title>
+    <title>Product List | E-Cart</title>
     <!--Stylesheet-->
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <!--Google Fonts-->
@@ -25,24 +25,30 @@
     <!--Header-->
     <header class="header">
       <div class="container flex justify-between align-center">
-        <a href="/" class="logo"><span>E</span>cart</a>
+        <a href="" class="logo"><span>E</span>cart</a>
         <div class="flex justify-between align-center">
-          <a class="btn btn-primary" href="/users/signup">Sign Up</a>
-          <a class="btn btn-primary" href="/users/signin">Sign In</a>
+          <a class="btn btn-primary" href="">Log Out</a>
+          <div class="user-info flex justify-between align-center flex-column">
+            <h2><%= user.name %></h2>
+            <p>User</p>
+          </div>
         </div>
       </div>
     </header>
     <!--Main-->
-    <main class="home container">
-      <h1>Welcome to Ecart!</h1>
-      <div class="flex justify-between align-center hero">
-        <div>
-          <p>SignUp to continue shopping.....</p>
-          <p>Best Of luck..!</p>
+    <main class="container products">
+      <section class="productlist flex justify-start align-center">
+        <div class="product flex justify-between align-center flex-column">
+          <div class="img-box">
+            <img class="full-width" src="/images/bullets.jpeg" alt="Product" />
+          </div>
+          <div class="details flex justify-between align-center">
+            <div class="price">$ 320</div>
+            <a class="btn btn-secondary" href="">View</a>
+            <div class="totalItems">20 Left</div>
+          </div>
         </div>
-
-        <div><a class="btn btn-primary" href="/users/signup">Sign Up</a></div>
-      </div>
+      </section>
     </main>
   </body>
 </html>
