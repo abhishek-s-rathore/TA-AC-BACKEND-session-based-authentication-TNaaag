@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Title-->
-    <title>Home | E-Cart</title>
+    <title>Add Product | E-Cart</title>
     <!--Stylesheet-->
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <!--Google Fonts-->
@@ -25,24 +25,31 @@
     <!--Header-->
     <header class="header">
       <div class="container flex justify-between align-center">
-        <a href="/" class="logo"><span>E</span>cart</a>
+        <a href="" class="logo"><span>E</span>cart</a>
         <div class="flex justify-between align-center">
-          <a class="btn btn-primary" href="/users/signup">Sign Up</a>
-          <a class="btn btn-primary" href="/users/signin">Sign In</a>
+          <a class="btn btn-primary" href="">Log Out</a>
+          <div class="user-info flex justify-between align-center flex-column">
+            <h2><%= user.name %></h2>
+            <p>Admin</p>
+          </div>
         </div>
       </div>
     </header>
     <!--Main-->
-    <main class="home container">
-      <h1>Welcome to Ecart!</h1>
-      <div class="flex justify-between align-center hero">
-        <div>
-          <p>SignUp to continue shopping.....</p>
-          <p>Best Of luck..!</p>
-        </div>
-
-        <div><a class="btn btn-primary" href="/users/signup">Sign Up</a></div>
-      </div>
+    <main class="signin container">
+      <h2>Edit Product</h2>
+      <form action="">
+        <input type="text" name="name" placeholder="Name Of Product..." />
+        <input type="Number" name="quantity" placeholder="Quantity..." />
+        <input type="Number" name="price" placeholder="Price..." />
+        <textarea
+          name="description"
+          rows="6"
+          placeholder="Product Description..."
+        ></textarea>
+        <input class="adjust" type="file" name="" id="" />
+        <input type="submit" value="Update Product" />
+      </form>
     </main>
   </body>
 </html>
